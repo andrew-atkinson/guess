@@ -1,0 +1,116 @@
+html {
+    box-sizing: 'border-box'
+}
+
+body {
+    background-image: url('die-blur-map.png');
+    background-size: cover;
+}
+
+#title {
+    font-size: 7em;
+    color: #dfc;
+}
+
+#subtitle {
+    color: #fff;
+    font-size: 3em;
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+img {
+    display: inline;
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+#footer {
+    width: 100%;
+    border-top: solid 2px black;
+    background-color: rgb(0,43,65);
+    position: fixed;
+    bottom: 0;
+}
+
+#input-parent {
+    width: 160px;
+    margin: 0 auto 0 auto;
+}
+
+#guesses {
+    padding: 40px;
+}
+
+#main {
+    padding: 20px;
+}
+
+#submit {
+    padding: 20px;
+    position: relative;
+    top: -60px;
+    left: 60px;
+    border-radius: 60px;
+    background-color: #666;
+    border: 1px solid orange;
+    color: #ffd;
+}
+
+#submit:hover {
+    border: 1px solid orange;
+}
+
+#player-input {
+    height: 160px;
+    text-align: center;
+    width: 160px;
+    font-size: 6em;
+    font-weight: bold;
+    margin: 20px auto;
+    border-radius: 80px;
+    background-color: #dfc;
+}
+
+.guess {
+    /* margin: 4px; */
+    display: inline;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 4em;
+    font-weight: bold;
+    color: #554;
+    background: #dfc;
+}
+
+#gh-img {
+    mix-blend-mode: multiply;
+}
+
+#reset {
+    color: #bba;
+    background-color: #544;
+}
+
+#hint {
+    color: #bba;
+    background-color: #544;
+}
+
+.margin-auto{
+        margin: 0 auto;
+}
+
+#author{
+    color:  #687;
+}
+
