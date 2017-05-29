@@ -37,7 +37,7 @@ img {
 #footer {
     width: 100%;
     border-top: solid 2px black;
-    background-color: rgb(0,43,65);
+    background-color: rgb(56, 97, 117);
     position: fixed;
     bottom: 0;
 }
@@ -92,9 +92,9 @@ img {
     background: #dfc;
 }
 
-#gh-img {
+/* #gh-img {
     mix-blend-mode: multiply;
-}
+} */
 
 #reset {
     color: #bba;
