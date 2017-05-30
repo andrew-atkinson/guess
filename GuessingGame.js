@@ -3,8 +3,7 @@ function generateWinningNumber() {
 }
 
 function shuffle(arr) {
-    var m = arr.length,
-        i;
+    var m = arr.length, i;
     // While there remain elements to shuffle…
     while (m) {
         // Pick a remaining element…
@@ -19,6 +18,9 @@ function Game() {
     this.playersGuess = null;
     this.pastGuesses = [];
     this.winningNumber = generateWinningNumber();
+    this.swatchColor = "";
+    this.numberColor = "";
+    this.subtitleColor = "";
 }
 
 Game.prototype.difference = function() {
@@ -39,48 +41,44 @@ Game.prototype.playersGuessSubmission = function(num) {
 }
 
 Game.prototype.checkGuess = function() {
-    var swatchColor = "";
-    var numberColor = "";
-    var subtitleColor = "";
     if (this.playersGuess === this.winningNumber) {
-        $("#title").text("You Win!").css({ "color": "#FF6C03", "font-size": "7em"});
+        $("#title").text("You Win!").css({ "color": "#FF6C03", "font-size": "7em"}).fadeIn();
         $("#subtitle").text("click reset to play again.");
-        var swatchColor = "FF8928";
-        numberColor = "#7F3601";
+        $('#hint, #submit, #player-input').prop("disabled", true);
+        this.swatchColor = "FF8928";
+        this.numberColor = "#7F3601";
     } else if (this.pastGuesses.indexOf(this.playersGuess) > -1) {
-        $("#title").text("You have already guessed that number.").css("font-size", "4em");
+        return "You have already guessed that number."
     } else if (this.pastGuesses.length > 4) {
         $("#title").text("You Lose!");
         $("#subtitle").text("click reset to play again.");
-        $('#hint, #submit').prop("disabled", true);
+        $('#hint, #submit, #player-input').prop("disabled", true);
         // return "You Lose."
     } else {
         this.pastGuesses.push(this.playersGuess);
         $('#guesses ul li:nth-child(' + this.pastGuesses.length + ')').text(this.playersGuess);
         var diffThisTurn = this.difference();
         if (diffThisTurn <= 10) {
-            swatchColor = "#E8CA68";
-            numberColor = "#664F05";
-            subtitleColor = "#E5B10B";
-            $("#subtitle").text("You\'re burning up!");
+            this.swatchColor = "#E8CA68";
+            this.numberColor = "#664F05";
+            this.subtitleColor = "#E5B10B";
+            return "You\'re burning up!";
         } else if (diffThisTurn < 25) {
-            swatchColor = "#E5FF64";
-            numberColor = "#6A7F00";
-            subtitleColor = "#D5FF00";
-            $("#subtitle").text("You\'re lukewarm");
+            this.swatchColor = "#E5FF64";
+            this.numberColor = "#6A7F00";
+            this.subtitleColor = "#D5FF00";
+            return "You\'re lukewarm";
         } else if (diffThisTurn < 50) {
-            swatchColor = "#6EE87B";
-            numberColor = "#027512";
-            subtitleColor = "#05F526";
-            $("#subtitle").text("You\'re a bit chilly.");
+            this.swatchColor = "#6EE87B";
+            this.numberColor = "#027512";
+            this.subtitleColor = "#05F526";
+            return "You\'re a bit chilly."
         } else {
-            swatchColor = "#29FFE7";
-            numberColor = "#037F79";
-            subtitleColor = "#05FFF3";
-            $("#subtitle").text("You\'re ice cold!");
+            this.swatchColor = "#29FFE7";
+            this.numberColor = "#037F79";
+            this.subtitleColor = "#05FFF3";
+            return "You\'re ice cold!";
         }
-        $('#guesses ul li:nth-child(' + this.pastGuesses.length + ')').css({ "background-color": swatchColor, "color": numberColor });
-        $("#subtitle").css({ "color": subtitleColor });
     }
 }
 
@@ -101,7 +99,11 @@ $(document).ready(function() {
         var submission = +$('#player-input').val();
         $('#player-input').val('');
         var output = game.playersGuessSubmission(submission);
+        $('#guesses ul li:nth-child(' + game.pastGuesses.length + ')').css({ "background-color": game.swatchColor, "color": game.numberColor });
+        $("#subtitle").css({ "color": game.subtitleColor });
+        $("#subtitle").text(output);
         console.log(output);
+
     })
     $("#hint").on('click', function() {
         var hintText = game.provideHint();
@@ -114,7 +116,7 @@ $(document).ready(function() {
         $("#guesses li").text("-").css({"color": "#554","background": "#dfc"});
         $("#title"). text("Guessing Game").css({"font-size": "7em","color": "#dfc"});
         $("#subtitle").text("Guess a number between one and a hundred").css({"color": "#fff", "font-size": "3em"});
-        $('#hint, #submit').prop("disabled",false);
+        $('#hint, #submit, #player-input').prop("disabled",false);
         console.log('new game...');
     })
 })
