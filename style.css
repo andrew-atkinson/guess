@@ -48,7 +48,7 @@ img {
 }
 
 #guesses {
-    padding: 40px;
+    padding: 20px;
 }
 
 #main {
@@ -56,6 +56,8 @@ img {
 }
 
 #submit {
+    font-size: 2em;
+    font-weight: bold;
     padding: 20px;
     position: relative;
     top: -60px;
@@ -81,6 +83,12 @@ img {
     background-color: #dfc;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .guess {
     /* margin: 4px; */
     display: inline;
@@ -97,11 +105,15 @@ img {
 } */
 
 #reset {
+    font-size: 2em;
     color: #bba;
     background-color: #544;
+    font-weight: bold;
 }
 
 #hint {
+    font-size: 2em;
+    font-weight: bold;
     color: #bba;
     background-color: #544;
 }
