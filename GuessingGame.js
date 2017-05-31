@@ -108,7 +108,7 @@ $(document).ready(function() {
     })
     $("#hint").on('click', function() {
         var hintText = game.provideHint();
-        $("#title").text('The winning number is either ' + hintText[0] + ", " + hintText[1] + ", or " + hintText[2]).css({ "font-size": "2vmin" });
+        $("#title").text('The winning number is either ' + hintText[0] + ", " + hintText[1] + ", or " + hintText[2]).css({ "font-size": "5vmin" });
         console.log(hintText);
 
     })
