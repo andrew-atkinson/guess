@@ -43,7 +43,7 @@ Game.prototype.playersGuessSubmission = function(num) {
 
 Game.prototype.checkGuess = function() {
     if (this.playersGuess === this.winningNumber) {
-        $("#title").text("You Win!").css({ "color": "#FF6C03", "font-size": "7em" }).fadeIn();
+        $("#title").text("You Win!").css({ "color": "#FF6C03", "font-size": "10vmin" }).fadeIn();
         $("#subtitle").text("click reset to play again.");
         $('#hint, #submit, #player-input').prop("disabled", true);
         this.swatchColor = "FF8928";
@@ -108,15 +108,15 @@ $(document).ready(function() {
     })
     $("#hint").on('click', function() {
         var hintText = game.provideHint();
-        $("#title").text('The winning number is either ' + hintText[0] + ", " + hintText[1] + ", or " + hintText[2]).css({ "font-size": "3em" });
+        $("#title").text('The winning number is either ' + hintText[0] + ", " + hintText[1] + ", or " + hintText[2]).css({ "font-size": "2vmin" });
         console.log(hintText);
 
     })
     $('#reset').on('click', function() {
         game = newGame();
         $("#guesses li").text("-").css({ "color": "#554", "background": "#dfc" });
-        $("#title").text("Guessing Game").css({ "font-size": "7em", "color": "#dfc" });
-        $("#subtitle").text("Guess a number between one and a hundred").css({ "color": "#fff", "font-size": "3em" });
+        $("#title").text("Guessing Game").css({ "font-size": "10vmin", "color": "#dfc" });
+        $("#subtitle").text("Guess a number between one and a hundred").css({ "color": "#fff", "font-size": "3vmin" });
         $('#hint, #submit, #player-input').prop("disabled", false);
         console.log('new game...');
     })
