@@ -7,14 +7,18 @@ body {
     background-size: cover;
 }
 
+#app {
+    padding-left: 0;
+}
+
 #title {
-    font-size: 7em;
+    font-size: 10vmin;
     color: #dfc;
 }
 
 #subtitle {
     color: #fff;
-    font-size: 3em;
+    font-size: 5vmin;
     font-weight: bold;
 }
 
@@ -29,9 +33,9 @@ ul {
 
 img {
     display: inline;
-    width: 200px;
+    width: 20vmin;
     height: auto;
-    margin: 10px;
+    margin: 1vmin;
 }
 
 #footer {
@@ -43,43 +47,43 @@ img {
 }
 
 #input-parent {
-    width: 160px;
+    width: 15vmin;
     margin: 0 auto 0 auto;
 }
 
 #guesses {
-    padding: 20px;
+    padding: 3vmin;
 }
 
 #main {
-    padding: 20px;
+    padding: 3vmin;
 }
 
 #submit {
-    font-size: 2em;
+    font-size: 5vmin;
     font-weight: bold;
-    padding: 20px;
+    padding: 3vmin;
     position: relative;
-    top: -60px;
-    left: 60px;
-    border-radius: 60px;
+    top: -10vmin;
+    left:10vmin;
+    border-radius: 10vmin;
     background-color: #666;
-    border: 1px solid orange;
+    border: solid orange;
     color: #ffd;
 }
 
 #submit:hover {
-    border: 1px solid orange;
+    border: solid red;
 }
 
 #player-input {
-    height: 160px;
+    height: 20vmin;
     text-align: center;
-    width: 160px;
-    font-size: 6em;
+    width: 20vmin;
+    font-size: 10vmin;
     font-weight: bold;
-    margin: 20px auto;
-    border-radius: 80px;
+    margin: 5vmin auto;
+    border-radius: 10vmin;
     background-color: #dfc;
 }
 
@@ -90,29 +94,26 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .guess {
-    /* margin: 4px; */
     display: inline;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 4em;
+    border-radius: 1vmin;
+    padding: 3vmin;
+    font-size: 6vmin;
     font-weight: bold;
     color: #554;
     background: #dfc;
 }
 
-/* #gh-img {
-    mix-blend-mode: multiply;
-} */
+
 
 #reset {
-    font-size: 2em;
+    font-size: 3vmin;
     color: #bba;
     background-color: #544;
     font-weight: bold;
 }
 
 #hint {
-    font-size: 2em;
+    font-size: 3vmin;
     font-weight: bold;
     color: #bba;
     background-color: #544;
@@ -125,4 +126,6 @@ input[type=number]::-webkit-outer-spin-button {
 #author{
     color:  #687;
 }
+
+
 
